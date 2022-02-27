@@ -1,0 +1,7 @@
+{
+  "/auth": {
+    "target": "https://api.vnsupplements.a2ztech.vn",
+    "secure": false,
+    "changeOrigin": true
+  }
+}
