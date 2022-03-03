@@ -3,7 +3,7 @@ import { UserI } from "./user.interface";
 
 
 export interface RoomI {
-  id?: number;
+  id?: string;
   name?: string;
   description?: string;
   users?: UserI[];

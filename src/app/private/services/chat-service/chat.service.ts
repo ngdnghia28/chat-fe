@@ -11,7 +11,7 @@ import { CustomSocket } from '../../sockets/custom-socket';
 export class ChatService {
 
   constructor(private socket: CustomSocket, private snackbar: MatSnackBar) {
-    
+
     // socket.connect();
 
     socket.on('details', (v) => {
@@ -27,8 +27,12 @@ export class ChatService {
     return this.socket.fromEvent<MessageI>('messageAdded');
   }
 
-  sendMessage(message: MessageI) {
+  sendMessage(message: { text: string, roomId: string }) {
     this.socket.emit('addMessage', message);
+  }
+
+  sendRead(dto: { messageId: string, roomId: string }) {
+    this.socket.emit('readMessage', dto);
   }
 
   joinRoom(room: RoomI) {
