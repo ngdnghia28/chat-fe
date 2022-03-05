@@ -50,7 +50,7 @@ export class ChatRoomComponent implements OnChanges, OnDestroy, AfterViewInit {
   }
 
   sendMessage() {
-    this.chatService.sendMessage({ text: this.chatMessage.value, roomId: this.chatRoom.id });
+    this.chatService.sendMessage({ text: this.chatMessage.value, type: 'image', mediaUrl: 'http://localhost:3000/images', roomId: this.chatRoom.id });
     this.chatMessage.reset();
     this.chatService.sendRead({ messageId: "1103a811-4999-4dc5-968b-f67b1993a3d8", roomId: this.chatRoom.id });
   }

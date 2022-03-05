@@ -27,7 +27,7 @@ export class ChatService {
     return this.socket.fromEvent<MessageI>('messageAdded');
   }
 
-  sendMessage(message: { text: string, roomId: string }) {
+  sendMessage(message: { text: string, type: string, mediaUrl?: string, roomId: string }) {
     this.socket.emit('addMessage', message);
   }
 
